@@ -9,7 +9,7 @@ pipeline {
           script {
               withCredentials([sshUserPrivateKey(credentialsId:'sftp-key', keyFileVariable: 'keyfile',usernameVariable: 'USERNAME')])
               { 
-                sh "bash sftp.sh 2022-Jan-02.txt ${USERNAME} ${keyfile}"
+                sh "bash sftp.sh ${File_Name} ${USERNAME} ${keyfile}"
               }
             }
         }
