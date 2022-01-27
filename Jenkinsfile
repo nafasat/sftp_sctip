@@ -5,7 +5,8 @@ pipeline {
     stage('input_sftp_IP') {
             steps {
                 input message: 'Please pass IP', parameters: [string(description: 'Please pass IP', name: 'IP')]
-     }
+              }
+    }
     stage('check_sftp') 
     {
       steps
