@@ -12,5 +12,7 @@ if [ $? -ne 0 ]
 then
   rm command.txt
   exit 1
+else
+  ls $File_Name
 fi
 
