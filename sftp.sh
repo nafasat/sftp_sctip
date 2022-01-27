@@ -6,7 +6,7 @@ Sftp_IP='34.131.87.94'
 
 echo "get $File_Name" > command.txt
 
-sftp -oStricHostKeyChecking=no -i $Sftp_Key -b command.txt ${Sftp_User}@${Sftp_IP}
+sftp -oStrictHostKeyChecking=no -i $Sftp_Key -b command.txt ${Sftp_User}@${Sftp_IP}
 
 if [ $? -ne 0 ]
 then
