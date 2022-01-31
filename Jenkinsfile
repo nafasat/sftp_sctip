@@ -3,7 +3,7 @@ def binary_code_dir = "target/"
 properties([parameters([string(description: 'input Binary_file Name', name: 'Binary_File_Name')])])
 pipeline {
   agent {
-    node { label 'master' }
+    node { label 'quay-vm' }
   }
   stages {
     stage('check_sftp') 
