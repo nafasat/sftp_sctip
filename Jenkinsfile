@@ -15,7 +15,8 @@ pipeline {
               { 
               //  # sh "bash sftp.sh ${Binary_File_Name} ${USERNAME} ${keyfile} ${my_sftp_server}" //
                 sh "echo get ${binary_code_dir}/${Binary_File_Name} | sftp -oStrictHostKeyChecking=no -i ${keyfile} ${USERNAME}@${my_sftp_server}"
-                
+                sh "sudo docker build --build-arg JAR_FILE_NAME=${Binary_File_Name} -t quay.testing.io:8080/nafasat_ahmed/app:${env.BUILD_ID} ."
+                sh "sudo docker push quay.testing.io:8080/nafasat_ahmed/app:${env.BUILD_ID}"                
               }
             }
         }
