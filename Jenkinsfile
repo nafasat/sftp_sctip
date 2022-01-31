@@ -1,4 +1,6 @@
 def my_sftp_server = "34.131.90.226"
+def binary_code_dir = 'target/"
+properties([parameters([string(description: 'input Binary_file Name', name: 'Binary_File_Name')])])
 pipeline {
   agent any
   stages {
@@ -9,7 +11,7 @@ pipeline {
           script {
               withCredentials([sshUserPrivateKey(credentialsId:'sftp-key', keyFileVariable: 'keyfile',usernameVariable: 'USERNAME')])
               { 
-                sh "bash sftp.sh ${File_Name} ${USERNAME} ${keyfile} ${my_sftp_server}"
+                sh "bash sftp.sh ${Binary_File_Name} ${USERNAME} ${keyfile} ${my_sftp_server}"
               }
             }
         }
