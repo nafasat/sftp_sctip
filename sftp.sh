@@ -2,7 +2,7 @@
 File_Name=$1
 Sftp_User=$2
 Sftp_Key=$3
-Sftp_IP='34.131.90.226'
+Sftp_IP=$4
 
 # echo "get $File_Name" > command.txt
 # echo "put command.txt" > command.txt
