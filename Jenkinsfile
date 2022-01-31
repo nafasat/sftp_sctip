@@ -1,5 +1,5 @@
 def my_sftp_server = "34.131.90.226"
-def binary_code_dir = 'target/"
+def binary_code_dir = "target/"
 properties([parameters([string(description: 'input Binary_file Name', name: 'Binary_File_Name')])])
 pipeline {
   agent any
