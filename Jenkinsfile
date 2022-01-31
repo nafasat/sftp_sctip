@@ -11,7 +11,7 @@ pipeline {
           script {
               withCredentials([sshUserPrivateKey(credentialsId:'sftp-key', keyFileVariable: 'keyfile',usernameVariable: 'USERNAME')])
               { 
-                # sh "bash sftp.sh ${Binary_File_Name} ${USERNAME} ${keyfile} ${my_sftp_server}"
+              //  # sh "bash sftp.sh ${Binary_File_Name} ${USERNAME} ${keyfile} ${my_sftp_server}" //
                 sh "echo get ${binary_code_dir}/${Binary_File_Name} | sftp -oStrictHostKeyChecking=no -i $Sftp_Key ${Sftp_User}@${Sftp_IP}"
                 
               }
